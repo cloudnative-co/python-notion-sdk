@@ -1,0 +1,19 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Resources:
+  NotionApi:
+    Type: AWS::Serverless::LayerVersion
+    Properties:
+      LayerName: NotionAPI
+      Description: Notion API SDK for Python 3
+      ContentUri: lib
+      RetentionPolicy: Retain
+      CompatibleRuntimes:
+        - python3.8
+        - python3.9
+        - python3.10
+Outputs:
+    NotionApi:
+        Value: !Ref NotionApi
+        Export:
+            Name: NotionApi
